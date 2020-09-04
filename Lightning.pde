@@ -5,14 +5,14 @@ int startY = 150;
 int endX = 0;
 int endY = 150;
 //declare a variable for image of PImage type
-PImage squiddyboi;
+//PImage squiddyboi;
 
 void setup() 
 {
   size (500, 300);
   strokeWeight(20);
   background(255);
-  squiddyboi = loadImage("squiddyboi.png");
+  //squiddyboi = loadImage("squiddyboi.png");
 }
 void draw()
 {
@@ -22,7 +22,7 @@ void draw()
   startY = endY;
   endX = (int)(Math.random()*500)+1;
   endY = (int)(Math.random()*300)+1;
-  image(squiddyboi, endX, endY);
+  //image(squiddyboi, endX, endY);
 }
 void mousePressed()
 {
