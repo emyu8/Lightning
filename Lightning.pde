@@ -1,4 +1,4 @@
-@pjs preload="squiddyboi.png"; 
+/* @pjs preload="squiddyboi.png"; */
 //initializing variables
 int startX = 0;
 int startY = 150;
