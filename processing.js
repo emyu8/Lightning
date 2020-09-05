@@ -9,7 +9,7 @@
     http://processingjs.org
 
 ***/
-
+/* @pjs preload="squiddyboi.png"; */
 (function(window, document, Math, undef) {
   var nop = function() {};
   var debug = function() {
