@@ -1,12 +1,23 @@
+import java.util.*;
+
 //initializing variables
 int startX = 0;
 int startY = 150;
 int endX = 0;
 int endY = 150;
+int listLength = 4;
+int oldNeckX; //previous squidward location
+int oldNeckY;
+int oldOldNeckX; //squidward location two cycles ago
+int oldOldNeckY;
 //declare a variable for image of PImage type
 PImage krustyKrab;
-int squidX = 250; //squidhead center
+int squidX = 250; //current squidward location
 int squidY = 150;
+
+ArrayList<Integer> oldNecks
+  = new ArrayList <Integer>(listLength);
+  
 
 void setup() 
 {
@@ -17,12 +28,30 @@ void setup()
   krustyKrab = loadImage("krustykrab.jpg");
   image(krustyKrab, 0, 0, 500, 300);
 }
+
 void draw()
 {
   image(krustyKrab, 0, 0, 500, 300);
   stroke(#a3d3c3);
   strokeWeight(18);
   line(startX,startY,squidX,squidY);
+  oldNecks.add(startX);
+  oldNecks.add(startY);
+  oldNecks.add(squidX);
+  oldNecks.add(squidY);
+  listLength += 2;
+  for (int i = 2; i < oldNecks.size(); i++) {
+    if (i % 2 == 0) {
+      oldNeckX = oldNecks.get(i);
+      oldOldNeckX = oldNecks.get(i-2);
+    }
+    if (i % 2 == 1) {
+      oldNeckY = oldNecks.get(i);
+      oldOldNeckY = oldNecks.get(i-2);
+       line(oldOldNeckX, oldOldNeckY, oldNeckX, oldNeckY);
+    }
+   
+  }
  
   noStroke();
   fill(#a3d3c3);
