@@ -97,8 +97,8 @@ void mousePressed()
   startY = 150;
   endX = 0;
   endY = 150;
+  oldNecks.clear();
   
- spongeX = mouseX-41;
- spongeY = mouseY-52.5;
- image(spongebob, spongeX, spongeY, 82, 105.5);
+ 
+ image(spongebob, 0, 0, 500, 643);
 }
