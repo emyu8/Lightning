@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 //initializing variables
@@ -12,8 +13,11 @@ int oldOldNeckX; //squidward location two cycles ago
 int oldOldNeckY;
 //declare a variable for image of PImage type
 PImage krustyKrab;
+PImage spongebob;
 int squidX = 250; //current squidward location
 int squidY = 150;
+float spongeX;
+float spongeY;
 
 ArrayList<Integer> oldNecks
   = new ArrayList <Integer>(listLength);
@@ -26,6 +30,7 @@ void setup()
   background(255);
   frameRate(4);
   krustyKrab = loadImage("krustykrab.jpg");
+  spongebob = loadImage("spongebob.png");
   image(krustyKrab, 0, 0, 500, 300);
 }
 
@@ -54,7 +59,7 @@ void draw()
   }
  
   noStroke();
-  fill(#a3d3c3);
+  fill(#80bfaa);
   ellipse(squidX, squidY, 80, 50); //squidward's top head
   rect(squidX-25, squidY+10, 50, 30);
   fill(#fffcbb);
@@ -65,7 +70,7 @@ void draw()
   rect(squidX-12, squidY, 5, 15);//left pupil
   noFill();
   strokeWeight(15);
-  stroke(#a3d3c3);
+  stroke(#80bfaa);
   arc(squidX, squidY+40, 50, 15, -PI, 0); //squidward's frown
   strokeWeight(2);
   stroke(0, 0, 0);
@@ -77,6 +82,7 @@ void draw()
   fill(#6a9989);
   triangle(squidX-10, squidY+30, squidX, squidY+10, squidX+10, squidY+30); //nosebridge
   ellipse(squidX, squidY+40, 20, 30); //nose
+  
   
   startX = squidX;
   startY = squidY;
@@ -91,4 +97,8 @@ void mousePressed()
   startY = 150;
   endX = 0;
   endY = 150;
+  
+ spongeX = mouseX-41;
+ spongeY = mouseY-52.5;
+ image(spongebob, spongeX, spongeY, 82, 105.5);
 }
